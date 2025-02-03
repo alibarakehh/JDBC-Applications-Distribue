@@ -1,23 +1,36 @@
-TD: Application Distrubées:Ali El Rida Barakeh (Readme)
-Pour pouvoir faire connecter aux JDBC:
- 1)on install le JDBC propre pour mssql d’apres le site de Microsoft.
- 2) Dans vscode quand on cree un projet, on ajout les jar files de mssql dans“Referenced libraries”.
- 3) On ecrit le code java demandé avec une database que j’avais deja depuis le cours de base de deonne relationelles(HR)
- 4)on configure les parametres comme en respectant les parametres qu’on a(exemple Ali-PC/MSSQLSERVER02 nom du serveur,+ nom de la base de donne + integrated security=true , trustServerCertificate=true pour le bypass de ssl.
+## Application Distribue : Ali El Rida Barakeh JDBC Setup Guide
 
-Step1: Create Java Project
- 
-Step2:No build tools , on ajoute le nom apres puis Enter
- 
-Step3: Ajouter les jar files dans referenced libraries
- 
-Step4:Connecter au MSSQL SERVER+ code java avec vos propre parametre 
- 
-Apres beaucoup d’erreur , concernant la connection d’ou j’ai eu plusieurs erreurs:
-1) Enable server browser service(turned off by default) 
-2) Enable TCP/IP for the desired server.(mon cas: MSSQLSERVER02)
-Le dernier erreur c’etait l’auth file qui n’est pas ajouté au path.J’ajout le path de dll file pur la certification et voila JDBC est etablie. Et je le resultat de la query dans vscode.
-     
+### Requirements:
+- Install the JDBC driver for MSSQL from the official Microsoft website.
+- Have a Java project set up in Visual Studio Code.
 
+### Steps:
 
- 
+#### Step 1: Create Java Project
+1. Open Visual Studio Code.
+2. Create a new Java project.
+
+#### Step 2: Add Project Name
+- Enter the project name and proceed.
+
+#### Step 3: Add JDBC Driver to Referenced Libraries
+1. Locate "Referenced libraries" in Visual Studio Code.
+2. Add the MSSQL JDBC driver JAR files.
+
+#### Step 4: Connect to MSSQL Server with Java Code
+1. Write Java code to connect to your MSSQL Server.
+   ```java
+   // Example connection code
+   String connectionUrl = "jdbc:sqlserver://Ali-PC/MSSQLSERVER02;databaseName=HR;integratedSecurity=true;trustServerCertificate=true;";
+   // Establish connection and execute queries
+   ```
+
+#### Troubleshooting Tips:
+- If facing connection errors:
+  1. Ensure the server browser service is enabled (usually turned off by default).
+  2. Enable TCP/IP for your MSSQL server instance (e.g., MSSQLSERVER02).
+  3. Verify that the authentication file (auth file) is added to the system PATH.
+
+#### Conclusion:
+After resolving these steps and any encountered errors, your JDBC connection should be established. Test your queries within Visual Studio Code to confirm connectivity.
+
